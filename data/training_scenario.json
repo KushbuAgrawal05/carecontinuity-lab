@@ -1,0 +1,13 @@
+{
+  "scenario_name": "Regional teaching hospital ransomware downtime tabletop",
+  "scenario_type": "synthetic training exercise inspired by publicly documented UMMC service impacts",
+  "created_for": "classroom continuity planning demonstration",
+  "services": {
+    "ehr": "down",
+    "communications": "down",
+    "scheduling": "down",
+    "laboratory": "degraded",
+    "identity": "degraded"
+  },
+  "exercise_note": "These service states are designed for training. They do not describe UMMC internal systems or the actual incident."
+}

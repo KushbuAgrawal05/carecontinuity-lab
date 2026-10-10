@@ -1,0 +1,105 @@
+{
+  "tool": "CareContinuity Lab",
+  "version": "1.0.0",
+  "generated_at_utc": "2026-10-10T08:32:04.837504+00:00",
+  "scenario_name": "Regional teaching hospital ransomware downtime tabletop",
+  "scenario_type": "synthetic training exercise inspired by publicly documented UMMC service impacts",
+  "scenario_sha256": "d56977d87fcdab9fb54f90de939279c368f0332ebf09fad8dd04f295df299f41",
+  "services": [
+    {
+      "service": "Electronic health record",
+      "state": "down"
+    },
+    {
+      "service": "Staff and patient communications",
+      "state": "down"
+    },
+    {
+      "service": "Scheduling and registration",
+      "state": "down"
+    },
+    {
+      "service": "Laboratory information",
+      "state": "degraded"
+    },
+    {
+      "service": "Identity and access services",
+      "state": "degraded"
+    }
+  ],
+  "workflows": [
+    {
+      "workflow": "Clinical documentation and orders",
+      "status": "at risk",
+      "impact_score": 5,
+      "affected_services": [
+        "Electronic health record",
+        "Identity and access services"
+      ],
+      "continuity_actions": [
+        "Activate the approved paper chart and order workflow.",
+        "Use approved patient identity checks and downtime identifiers.",
+        "Assign a unique downtime record number and reconcile entries after restoration."
+      ]
+    },
+    {
+      "workflow": "Laboratory requests and result delivery",
+      "status": "at risk",
+      "impact_score": 5,
+      "affected_services": [
+        "Electronic health record",
+        "Laboratory information",
+        "Staff and patient communications"
+      ],
+      "continuity_actions": [
+        "Use approved paper requisitions and documented read-back for critical results.",
+        "Record who received a result, when it was received, and how it was acknowledged."
+      ]
+    },
+    {
+      "workflow": "Appointment access and rescheduling",
+      "status": "at risk",
+      "impact_score": 4,
+      "affected_services": [
+        "Scheduling and registration",
+        "Staff and patient communications",
+        "Electronic health record"
+      ],
+      "continuity_actions": [
+        "Use a controlled, access-restricted downtime queue with a clear owner.",
+        "Use approved alternate communication channels and reconcile every queued request."
+      ]
+    },
+    {
+      "workflow": "Medication workflow coordination",
+      "status": "at risk",
+      "impact_score": 5,
+      "affected_services": [
+        "Electronic health record",
+        "Identity and access services",
+        "Staff and patient communications"
+      ],
+      "continuity_actions": [
+        "Follow the facility's approved medication downtime procedure and independent checks.",
+        "Keep downtime records secure and reconcile them to the authoritative record after recovery."
+      ]
+    },
+    {
+      "workflow": "Incident command and status coordination",
+      "status": "degraded",
+      "impact_score": 3,
+      "affected_services": [
+        "Staff and patient communications",
+        "Identity and access services"
+      ],
+      "continuity_actions": [
+        "Use a pre-approved alternate incident command channel and paper decision log.",
+        "Confirm staff identity and record decision owner, timestamp, and next review point."
+      ]
+    }
+  ],
+  "aggregate_exercise_score": 22,
+  "aggregate_maximum": 22,
+  "interpretation": "Operational tabletop signal only. This score is not a clinical risk score and must not be used to prioritize individual patients or determine treatment.",
+  "exercise_note": "These service states are designed for training. They do not describe UMMC internal systems or the actual incident."
+}
