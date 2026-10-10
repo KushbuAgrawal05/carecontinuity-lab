@@ -1,0 +1,10 @@
+{
+  "scenario_name": "Healthcare disruption risk scenario",
+  "services": {
+    "ehr": "down",
+    "communications": "available",
+    "scheduling": "degraded",
+    "laboratory": "available",
+    "identity": "available"
+  }
+}
